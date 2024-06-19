@@ -1,6 +1,6 @@
 ﻿using ObjectFunctionalSandbox.Patterns;
 
-var result = ResultPattern.Divide( 10,0 );
+var result = ResultPattern.ReadFile( "test.text" );
 
 if( result.IsSuccess )
     Console.WriteLine( result.Value );

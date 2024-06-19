@@ -44,4 +44,18 @@ public static class ResultPattern
         return Result<int>.Success( numerator / denominator );
     }
 
+    public static Result<string> ReadFile( string path )
+    {
+        if ( string.IsNullOrWhiteSpace( path ) )
+            return Result<string>.Failure( "The file path is Empty." );
+
+        if( !File.Exists( path ) )
+            return Result<string>.Failure( "File not found" );
+
+        string textContent = File.ReadAllText( path );
+
+        return Result<string>.Success( textContent );
+
+    }
+
 }
